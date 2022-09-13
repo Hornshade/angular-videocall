@@ -30,7 +30,7 @@
 .button {
   width: 150px;
   height: 40px;
-  margin: 20px auto;
+  margin: 20px;
   border: none;
   background-color: #f90053;
   font-family: "Courier New", Courier, monospace;
@@ -38,4 +38,28 @@
   font-weight: 800;
   border-radius: 8px;
   color: white;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #f90053e0;
+}
+.leave {
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  border: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 8px;
+  background-color: #ff9400;
+  color: white;
+  cursor: pointer;
+}
+.leave:hover {
+  background-color: #ff9500e0;
+}
+.actions {
+  display: flex;
+  flex-direction: row;
 }
