@@ -1,0 +1,55 @@
+.c-error {
+  background-color: rgba(0, 0, 0, 0.612);
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  margin: 15% auto;
+  max-width: 800px;
+}
+
+.c-error__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+.c-error__title {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  font-weight: 800;
+  padding: 30px;
+  color: #01ffff;
+}
+
+.c-error__description {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: none;
+  padding: 10px;
+}
+
+.c-error__suggestion {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.c-error__button {
+  height: 35px;
+  width: 100px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #f90053;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.c-error__button:hover {
+  background-color: #f90053e0;
+}
