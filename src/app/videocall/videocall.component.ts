@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import * as OT from '@opentok/client';
 
 @Component({
@@ -25,7 +26,7 @@ export class VideocallComponent implements OnInit, AfterViewInit {
   @ViewChild('publisherDiv') publisherDiv!: ElementRef;
   @ViewChild('subscriberDiv') subscriberDiv!: ElementRef;
 
-  constructor() {}
+  constructor(public router: Router) {}
 
   ngAfterViewInit(): void {
     this.initializeSession();
@@ -41,7 +42,8 @@ export class VideocallComponent implements OnInit, AfterViewInit {
     });
 
     this.session.on('sessionDisconnected', (event) => {
-      alert('sessionDisconnected');
+      // alert('sessionDisconnected');
+      window.location.replace('localhost:4200');
     });
     this.session.on('streamPropertyChanged', (event) => {
       alert('streamPropertyChanged');
@@ -75,6 +77,7 @@ export class VideocallComponent implements OnInit, AfterViewInit {
       if (idx > -1) {
         this.streams.splice(idx, 1);
       }
+      window.location.replace('localhost:4200');
     });
 
     // Subscribe to a newly created stream
@@ -150,6 +153,11 @@ export class VideocallComponent implements OnInit, AfterViewInit {
       this.onSessionDestroyed(publisher);
     }
   }
+  onLeave() {
+    this.session.disconnect();
+    this.router.navigate(['/']);
+  }
+
   onSessionDestroyed(publisher: OT.Publisher) {
     publisher.on('destroyed', () => {
       alert('destroyed');
